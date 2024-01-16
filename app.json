@@ -1,6 +1,10 @@
 {
-  "expo": {
-    "name": "stickypix-2024",
-    "slug": "stickypix-2024"
-  }
+	"expo": {
+		"name": "Stickypix",
+		"slug": "stickypix",
+		"plugins": ["expo-router"],
+      "version": "2.0.0",
+      "orientation": "portrait",
+		"scheme": "stickypix-scheme"
+	}
 }
