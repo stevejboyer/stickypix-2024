@@ -24,6 +24,10 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
 		SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+		TragicMarker: require('../assets/fonts/TragicMarker.otf'),
+		BreeSerif: require('../assets/fonts/BreeSerif-Regular.ttf'),
+		NotoSerif: require('../assets/fonts/NotoSerif-VariableFont.ttf'),
+		NotoSerifItalic: require('../assets/fonts/NotoSerif-Italic-VariableFont.ttf'),
 		...FontAwesome.font,
 	});
 

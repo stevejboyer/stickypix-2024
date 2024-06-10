@@ -8,6 +8,8 @@ import ShoppingCartHeaderIcon from '@/components/ShoppingCartHeaderIcon';
 import TabBar from '@/components/tabBar/TabBar';
 import MaterialTabBarIcon from '@/components/tabBar/TabBarIcons/MaterialTabBarIcon';
 import FontAwesomeTabBarIcon from '@/components/tabBar/TabBarIcons/FontAwesomeTabBarIcon';
+import { BottomTabHeaderProps } from '@react-navigation/bottom-tabs';
+import TabHeader from '@/components/tabHeader/TabHeader';
 
 export default function TabLayout() {
 	const colorScheme = useColorScheme();
@@ -19,6 +21,7 @@ export default function TabLayout() {
 				// Disable the static render of the header on web
 				// to prevent a hydration error in React Navigation v6.
 				headerShown: useClientOnlyValue(false, true),
+				header: (props: BottomTabHeaderProps) => <TabHeader {...props} />,
 			}}
 			tabBar={props => <TabBar {...props} />}
 		>
