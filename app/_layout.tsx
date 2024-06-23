@@ -28,6 +28,8 @@ export default function RootLayout() {
 		BreeSerif: require('../assets/fonts/BreeSerif-Regular.ttf'),
 		NotoSerif: require('../assets/fonts/NotoSerif-VariableFont.ttf'),
 		NotoSerifItalic: require('../assets/fonts/NotoSerif-Italic-VariableFont.ttf'),
+		Questrial: require('../assets/fonts/Questrial-Regular.ttf'),
+		Jersey25: require('../assets/fonts/Jersey25-Regular.ttf'),
 		...FontAwesome.font,
 	});
 

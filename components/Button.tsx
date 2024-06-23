@@ -44,13 +44,10 @@ const styles = StyleSheet.create({
 		borderRadius: 15,
 		borderCurve: 'continuous',
 		borderWidth: 2,
-		// shadowColor: '#B620E0',
-		// shadowOffset: { width: 5, height: 5 },
-		// shadowRadius: 1,
-		// shadowOpacity: 1,
 	},
 	text: {
-		fontSize: 18,
-		fontWeight: 'bold',
+		fontSize: 28,
+		fontFamily: 'Jersey25',
+		textTransform: 'uppercase',
 	},
 });

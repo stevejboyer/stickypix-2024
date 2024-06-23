@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const OrderTab = () => {
+const MoreScreen = () => {
 	return (
 		<View>
-			<Text>OrderTab</Text>
+			<Text>MoreScreen</Text>
 		</View>
 	);
 };
 
-export default OrderTab;
+export default MoreScreen;
