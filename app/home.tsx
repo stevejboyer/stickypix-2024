@@ -3,15 +3,17 @@ import React, { useCallback } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import RoundedButton from './components/RoundedButton';
+import RoundedButton from '../components/RoundedButton';
+import { Link } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
-		'Nunito-Medium': require('./assets/fonts/Nunito-Medium.ttf'),
-		'Nunito-SemiBold': require('./assets/fonts/Nunito-SemiBold.ttf'),
-		'Nunito-ExtraBold': require('./assets/fonts/Nunito-ExtraBold.ttf'),
+		'Nunito-Medium': require('../assets/fonts/Nunito-Medium.ttf'),
+		'Nunito-SemiBold': require('../assets/fonts/Nunito-SemiBold.ttf'),
+		'Nunito-ExtraBold': require('../assets/fonts/Nunito-ExtraBold.ttf'),
 	});
 
 	const onLayoutRootView = useCallback(async () => {
@@ -37,14 +39,20 @@ export default function App() {
 				shouldPlay
 				isMuted
 			/>
-			<View style={styles.cta}>
-				<View style={styles.text}>
-					<Text style={styles.headline}>Stickypix Magnets</Text>
-					{/* <Text style={styles.headline2}>Magnets</Text> */}
-					<Text style={styles.subHeadline}> Photo prints you'll actually see</Text>
+			<SafeAreaView style={styles.contentWrapper}>
+				{/* <View style={styles.header}>
+               <IconButton 
+            </View> */}
+				<View style={styles.cta}>
+					<View style={styles.ctaText}>
+						<Text style={styles.headline}>Stickypix Magnets</Text>
+						<Text style={styles.subHeadline}> Photo prints you'll actually see</Text>
+					</View>
+					<Link href="/order/StartOrderScreen" asChild>
+						<RoundedButton text="Get Started" onPress={() => console.log('order now pressed')} />
+					</Link>
 				</View>
-				<RoundedButton text="Get Started" onPress={() => console.log('order now pressed')} />
-			</View>
+			</SafeAreaView>
 		</View>
 	);
 }
@@ -58,17 +66,20 @@ const styles = StyleSheet.create({
 		height: '100%',
 		width: '100%',
 	},
-	cta: {
+	contentWrapper: {
 		position: 'absolute',
 		top: 0,
 		right: 0,
 		bottom: 0,
 		left: 0,
 		alignItems: 'center',
-		justifyContent: 'flex-end',
-		paddingBottom: 50,
+		justifyContent: 'space-between',
 	},
-	text: {
+	cta: {
+		alignItems: 'center',
+		justifyContent: 'flex-end',
+	},
+	ctaText: {
 		alignItems: 'flex-start',
 		width: '100%',
 		paddingLeft: 10,

@@ -1,3 +1,4 @@
+import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
@@ -8,7 +9,7 @@ export { ErrorBoundary } from 'expo-router';
 
 export const unstable_settings = {
 	// Ensure that reloading on `/modal` keeps a back button present.
-	initialRouteName: '(tabs)',
+	initialRouteName: 'home',
 };
 
 SplashScreen.preventAutoHideAsync();
@@ -16,8 +17,8 @@ SplashScreen.preventAutoHideAsync();
 function RootLayoutNav() {
 	return (
 		<Stack>
-			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-			<Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+			<Stack.Screen name="home" options={{ headerShown: false }} />
+			<Stack.Screen name="cartModal" options={{ presentation: 'modal' }} />
 		</Stack>
 	);
 }
@@ -31,7 +32,9 @@ export default function RootLayout() {
 	});
 
 	useEffect(() => {
-		if (error) throw error;
+		if (error) {
+			throw error;
+		}
 	}, [error]);
 
 	useEffect(() => {
